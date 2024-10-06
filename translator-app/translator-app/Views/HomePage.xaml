@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<uranium:UraniumContentPage
+    x:Class="translator_app.Views.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:fa="clr-namespace:UraniumUI.Icons.FontAwesome;assembly=UraniumUI.Icons.FontAwesome"
+    xmlns:local="clr-namespace:translator_app.Views"
+    xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui">
+    <StackLayout>
+        <Label
+            HorizontalOptions="Center"
+            Text="Welcome to Home !!!"
+            VerticalOptions="Center" />
+
+        <Button Clicked="LogOut_Clicked">
+            <Button.ImageSource>
+                <FontImageSource
+                    FontFamily="FASolid"
+                    Glyph="{x:Static fa:Solid.RightFromBracket}"
+                    Size="15"
+                    Color="{StaticResource Neutral2}" />
+            </Button.ImageSource>
+        </Button>
+    </StackLayout>
+</uranium:UraniumContentPage>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<uranium:UraniumContentPage
+    x:Class="translator_app.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:fa="clr-namespace:UraniumUI.Icons.FontAwesome;assembly=UraniumUI.Icons.FontAwesome"
+    xmlns:local="clr-namespace:translator_app.Views"
+    xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+    xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui">
+    <ContentPage.Content>
+        <AbsoluteLayout BackgroundColor="{StaticResource White}">
+            <FlexLayout
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                FlexLayout.AlignItems="Center"
+                FlexLayout.JustifyContent="Center">
+                <StackLayout VerticalOptions="Center">
+                    <Image
+                        BackgroundColor="Transparent"
+                        HeightRequest="300"
+                        Source="cclv3_icon.png"
+                        WidthRequest="300" />
+
+                    <material:TextField
+                        Title="Please enter or import token"
+                        Margin="0,0,0,20"
+                        AccentColor="{StaticResource Black}"
+                        BackgroundColor="{StaticResource Transparent}"
+                        BorderColor="{StaticResource FrameBorder}"
+                        BorderThickness="1"
+                        TextColor="{StaticResource Black}"
+                        TitleColor="{StaticResource Gray400}"
+                        TitleFontSize="14"
+                        WidthRequest="400">
+                        <material:TextField.Attachments>
+                            <Button
+                                BackgroundColor="{StaticResource SubButton}"
+                                BorderColor="{StaticResource FrameBorder}"
+                                BorderWidth="0.2"
+                                CornerRadius="0"
+                                HeightRequest="50"
+                                IsVisible="True"
+                                ZIndex="1">
+                                <Button.ImageSource>
+                                    <FontImageSource
+                                        FontFamily="FASolid"
+                                        Glyph="{x:Static fa:Solid.Upload}"
+                                        Size="15"
+                                        Color="{StaticResource Neutral2}" />
+                                </Button.ImageSource>
+                            </Button>
+                        </material:TextField.Attachments>
+                    </material:TextField>
+
+                    <Button
+                        BackgroundColor="{StaticResource Primary}"
+                        Command="{Binding LoginCommand}"
+                        CornerRadius="8"
+                        HeightRequest="40"
+                        Text="Login"
+                        TextColor="{StaticResource White}"
+                        WidthRequest="100" />
+                </StackLayout>
+            </FlexLayout>
+
+            <StackLayout
+                Margin="0,0,20,20"
+                AbsoluteLayout.LayoutBounds="1,1,-1,-1"
+                AbsoluteLayout.LayoutFlags="PositionProportional">
+                <Label
+                    FontSize="13"
+                    HorizontalOptions="End"
+                    Text="Version 1.0.0"
+                    TextColor="{StaticResource Black}" />
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</uranium:UraniumContentPage>

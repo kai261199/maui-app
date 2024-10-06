@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="translator_app.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:fa="clr-namespace:UraniumUI.Icons.FontAwesome;assembly=UraniumUI.Icons.FontAwesome"
+    xmlns:local="clr-namespace:translator_app"
+    xmlns:views="clr-namespace:translator_app.Views"
+    FlyoutBackgroundColor="{StaticResource FlyoutBg}"
+    FlyoutBehavior="Disabled"
+    Shell.ForegroundColor="{StaticResource Black}"
+    Shell.TabBarIsVisible="False">
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="220" />
+                </Grid.ColumnDefinitions>
+                <Image
+                    Margin="15"
+                    HeightRequest="20"
+                    Source="{Binding Icon}" />
+                <Label
+                    Grid.Column="1"
+                    FontSize="18"
+                    HorizontalTextAlignment="Start"
+                    Text="{Binding Title}"
+                    TextColor="{StaticResource GrayActive20}"
+                    VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <Shell.FlyoutHeader>
+        <Image
+            Margin="0,0,0,20"
+            BackgroundColor="Transparent"
+            HeightRequest="100"
+            Source="cclv3_icon.png"
+            WidthRequest="100" />
+    </Shell.FlyoutHeader>
+
+    <ShellContent
+        ContentTemplate="{DataTemplate views:LoadingPage}"
+        Route="LoadingPage"
+        Shell.FlyoutItemIsVisible="False" />
+
+    <ShellContent
+        ContentTemplate="{DataTemplate views:LoginPage}"
+        Route="LoginPage"
+        Shell.FlyoutItemIsVisible="False" />
+
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Shell.FlyoutBehavior="Locked">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate views:HomePage}"
+            Icon="{FontImageSource FontFamily=FASolid,
+                                   Glyph={x:Static fa:Solid.House},
+                                   Color={StaticResource GrayActive20},
+                                   Size=15}"
+            Route="HomePage" />
+
+        <ShellContent
+            Title="Diagnostic"
+            ContentTemplate="{DataTemplate views:DiagnosticPage}"
+            Icon="{FontImageSource FontFamily=FASolid,
+                                   Glyph={x:Static fa:Solid.FileWaveform},
+                                   Color={StaticResource GrayActive20},
+                                   Size=15}"
+            Route="DiagnosticPage" />
+
+        <ShellContent
+            Title="Quick Start"
+            ContentTemplate="{DataTemplate views:QuickStartPage}"
+            Icon="{FontImageSource FontFamily=FASolid,
+                                   Glyph={x:Static fa:Solid.WindowMaximize},
+                                   Color={StaticResource GrayActive20},
+                                   Size=15}"
+            Route="QuickStartPage" />
+
+        <ShellContent
+            Title="Session"
+            ContentTemplate="{DataTemplate views:SessionPage}"
+            Icon="{FontImageSource FontFamily=FASolid,
+                                   Glyph={x:Static fa:Solid.Book},
+                                   Color={StaticResource GrayActive20},
+                                   Size=15}"
+            Route="SessionPage" />
+
+        <ShellContent
+            Title="Setting"
+            ContentTemplate="{DataTemplate views:SettingPage}"
+            Icon="{FontImageSource FontFamily=FASolid,
+                                   Glyph={x:Static fa:Solid.Gear},
+                                   Color={StaticResource GrayActive20},
+                                   Size=15}"
+            Route="SettingPage" />
+    </FlyoutItem>
+
+
+
+</Shell>
